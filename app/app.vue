@@ -35,7 +35,7 @@
         <div class="hero-container relative z-10 flex flex-col lg:flex-row items-center gap-16 w-full">
             <div class="profile-wrapper">
                 <div class="profile-ring"></div>
-                <img src="Images/profile4.jpg" alt="Chester Besin"
+                <img src="/public/Images/profile4.jpg" alt="Chester Besin"
                      class="profile-image w-52 h-52 lg:w-72 lg:h-72 rounded-full border-4 border-yellow-400 aspect-square object-cover"/>
             </div>
 
