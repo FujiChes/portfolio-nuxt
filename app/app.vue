@@ -38,7 +38,6 @@
                 <img src="/Images/profile4.jpg" alt="Chester Besin"
                      class="profile-image w-52 h-52 lg:w-72 lg:h-72 rounded-full border-4 border-yellow-400 aspect-square object-cover"/>
             </div>
-git
             <div class="hero-text max-w-3xl">
                 <p class="text-yellow-400 uppercase tracking-[0.35em] text-xs mb-5 font-bold">WELCOME TO MY PORTFOLIO</p>
                 <h2 class="text-3xl lg:text-4xl text-gray-300 mb-5 font-light">Hi, I am</h2>
