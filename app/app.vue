@@ -35,10 +35,10 @@
         <div class="hero-container relative z-10 flex flex-col lg:flex-row items-center gap-16 w-full">
             <div class="profile-wrapper">
                 <div class="profile-ring"></div>
-                <img src="/public/Images/profile4.jpg" alt="Chester Besin"
+                <img src="/Images/profile4.jpg" alt="Chester Besin"
                      class="profile-image w-52 h-52 lg:w-72 lg:h-72 rounded-full border-4 border-yellow-400 aspect-square object-cover"/>
             </div>
-
+git
             <div class="hero-text max-w-3xl">
                 <p class="text-yellow-400 uppercase tracking-[0.35em] text-xs mb-5 font-bold">WELCOME TO MY PORTFOLIO</p>
                 <h2 class="text-3xl lg:text-4xl text-gray-300 mb-5 font-light">Hi, I am</h2>
