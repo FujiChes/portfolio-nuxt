@@ -1,3 +1,8 @@
+/* Tailwind (replaces the cdn.tailwindcss.com script). Your original style.css follows. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Base */
 html, body {
     overflow-x: hidden;
@@ -5,7 +10,7 @@ html, body {
     margin: 0;
     padding: 0;
 }
-body { font-family: 'Inter', sans-serif; color: white; margin: 0; }
+body { font-family: 'Inter', sans-serif; color: white; margin: 0; background-color: #0a0a0a; }
 .font-heading { font-family: 'Space Grotesk', sans-serif; }
 
 /* ─── Sidebar ─── */
@@ -33,7 +38,7 @@ body { font-family: 'Inter', sans-serif; color: white; margin: 0; }
 /* ─── Hero BG ─── */
 .hero-bg {
     background: linear-gradient(to right, #0a0a0a 30%, transparent 100%),
-                url('Images/profile1.jpg');
+                url('/Images/profile1.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -228,8 +233,6 @@ body { font-family: 'Inter', sans-serif; color: white; margin: 0; }
 }
 .cert-card:hover .shine { left: 180%; }
 @media(max-width:1024px) { .modal-content { padding: 1rem; } }
-
-
 
 /* ─── Projects Page ─── */
 .proj-section { position: relative; overflow: hidden; }
