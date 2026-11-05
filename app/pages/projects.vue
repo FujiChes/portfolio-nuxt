@@ -10,8 +10,8 @@ const asset = useAsset()
 const projects = [
   {
     id: 'student-handbook',
-    image: asset('Images/photo1.jpg'),
-    preview: asset('Images/student-handbook.png'),
+    image: '/Images/photo1.jpg',
+    preview: '/Images/photo1.jpg',
     alt: 'Student Handbook Cover Design',
     icon: 'fa-paintbrush',
     tag: 'UI/UX Design',
@@ -26,7 +26,6 @@ const projects = [
     ]
   }
 ]
-
 const modal = reactive({ open: false, image: '', alt: '', title: '', link: '' })
 
 function openModal(project) {
