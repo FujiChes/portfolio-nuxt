@@ -107,12 +107,12 @@ onMounted(async () => {
       <div class="about-right hidden lg:block relative">
         <div class="image-wrapper">
           <div class="image-card aspect-square">
-            <img
-              :src="asset('Images/profile3.jpg')"
-              alt="Chester Besin"
-              class="w-full h-full object-cover"
-              style="object-position: center 50%;"
-            />
+           <img
+            src="/Images/profile3.jpg"
+            alt="Chester Besin"
+            class="w-full h-full object-cover"
+            style="object-position: center 50%;"
+          />
           </div>
           <div class="floating-badge">
             <div class="flex items-center gap-4">
