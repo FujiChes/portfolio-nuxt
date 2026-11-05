@@ -1,10 +1,16 @@
+
 <script setup>
-useHead({ title: 'Certificates | Chester Besin' })
+import { reactive } from 'vue'
+import { useHead } from '#imports'
+import { useAnimateOnMount } from '~/composables/useAnimateOnMount'
+import { useAsset } from '~/composables/useAsset'
+
+useHead({
+  title: 'Certificates | Chester Besin'
+})
 
 const asset = useAsset()
 
-// To add a certificate: add one more object here.
-// `accent: true` shows a value in yellow bold, `small: true` shows it in small text.
 const certificates = [
   {
     id: 'database',
@@ -42,7 +48,13 @@ const certificates = [
   }
 ]
 
-const modal = reactive({ open: false, image: '', alt: '', title: '', link: '' })
+const modal = reactive({
+  open: false,
+  image: '',
+  alt: '',
+  title: '',
+  link: ''
+})
 
 function openModal(cert) {
   modal.image = cert.image
@@ -53,8 +65,23 @@ function openModal(cert) {
 }
 
 useAnimateOnMount((anime) => {
-  anime({ targets: '.cert-header', opacity: [0, 1], translateY: [40, 0], delay: anime.stagger(120), duration: 900, easing: 'easeOutExpo' })
-  anime({ targets: '.cert-card', opacity: [0, 1], translateY: [60, 0], delay: anime.stagger(180, { start: 400 }), duration: 900, easing: 'easeOutExpo' })
+  anime({
+    targets: '.cert-header',
+    opacity: [0, 1],
+    translateY: [40, 0],
+    delay: anime.stagger(120),
+    duration: 900,
+    easing: 'easeOutExpo'
+  })
+
+  anime({
+    targets: '.cert-card',
+    opacity: [0, 1],
+    translateY: [60, 0],
+    delay: anime.stagger(180, { start: 400 }),
+    duration: 900,
+    easing: 'easeOutExpo'
+  })
 }, '.cert-header, .cert-card')
 </script>
 

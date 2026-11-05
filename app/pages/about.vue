@@ -1,17 +1,65 @@
+
 <script setup>
-useHead({ title: 'About | Chester Besin' })
+import { onMounted, nextTick } from 'vue'
 
-const asset = useAsset()
+useHead({
+  title: 'About | Chester Besin'
+})
 
-const tags = ['UI/UX Design', 'Web Development', 'Creative Coding']
+const tags = [
+  'UI/UX Design',
+  'Web Development',
+  'Creative Coding'
+]
 
-useAnimateOnMount((anime) => {
-  anime({ targets: '.about-left', opacity: [0, 1], translateX: [-40, 0], duration: 1200, easing: 'easeOutExpo' })
-  anime({ targets: '.about-right', opacity: [0, 1], translateX: [40, 0], duration: 1200, delay: 200, easing: 'easeOutExpo' })
-  anime({ targets: '.about-tag', opacity: [0, 1], translateY: [20, 0], delay: anime.stagger(120, { start: 500 }), duration: 700, easing: 'easeOutExpo' })
-  anime({ targets: '.info-card', opacity: [0, 1], translateY: [25, 0], delay: anime.stagger(150, { start: 700 }), duration: 800, easing: 'easeOutExpo' })
-}, '.about-left, .about-right, .about-tag, .info-card')
+// Initialize animations only in the browser.
+onMounted(async () => {
+  await nextTick()
+
+  try {
+    const { default: anime } = await import('animejs')
+
+    anime({
+      targets: '.about-left',
+      opacity: [0, 1],
+      translateX: [-40, 0],
+      duration: 1200,
+      easing: 'easeOutExpo'
+    })
+
+    anime({
+      targets: '.about-right',
+      opacity: [0, 1],
+      translateX: [40, 0],
+      duration: 1200,
+      delay: 200,
+      easing: 'easeOutExpo'
+    })
+
+    anime({
+      targets: '.about-tag',
+      opacity: [0, 1],
+      translateY: [20, 0],
+      delay: anime.stagger(120, { start: 500 }),
+      duration: 700,
+      easing: 'easeOutExpo'
+    })
+
+    anime({
+      targets: '.info-card',
+      opacity: [0, 1],
+      translateY: [25, 0],
+      delay: anime.stagger(150, { start: 700 }),
+      duration: 800,
+      easing: 'easeOutExpo'
+    })
+
+  } catch (error) {
+    console.error('About page animation error:', error)
+  }
+})
 </script>
+
 
 <template>
   <section id="about" class="about-section min-h-screen flex items-center px-6 lg:px-20 py-20 pb-24 lg:pb-20">
