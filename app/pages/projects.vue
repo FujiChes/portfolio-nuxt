@@ -10,7 +10,7 @@ const asset = useAsset()
 const projects = [
   {
     id: 'student-handbook',
-    image: asset('Images/photo1.jpg.jpg'),
+    image: asset('Images/photo1.jpg'),
     preview: asset('Images/student-handbook.png'),
     alt: 'Student Handbook Cover Design',
     icon: 'fa-paintbrush',
