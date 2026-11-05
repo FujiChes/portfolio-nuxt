@@ -295,7 +295,7 @@ body { font-family: 'Inter', sans-serif; color: white; background-color: #0a0a0a
 .cert-card,
 .proj-header,
 .proj-card {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
+    opacity: 1 ;
+    visibility: visible;
+    transform: none;
 }
