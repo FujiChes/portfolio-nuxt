@@ -1,4 +1,4 @@
-/* Tailwind (replaces the cdn.tailwindcss.com script). Your original style.css follows. */
+/* Tailwind layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,11 +10,11 @@ html, body {
     margin: 0;
     padding: 0;
 }
-body { font-family: 'Inter', sans-serif; color: white; margin: 0; background-color: #0a0a0a; }
+body { font-family: 'Inter', sans-serif; color: white; background-color: #0a0a0a; }
 .font-heading { font-family: 'Space Grotesk', sans-serif; }
 
 /* ─── Sidebar ─── */
-.sidebar { transition: width .4s ease; background: #050505 !important; }
+.sidebar { transition: width .4s ease; background-color: #050505; }
 
 @media (min-width: 1024px) {
     .sidebar:hover { width: 240px; }
@@ -22,18 +22,19 @@ body { font-family: 'Inter', sans-serif; color: white; margin: 0; background-col
     .sidebar:hover .sidebar-text { opacity: 1; }
 }
 
-.nav-btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 1.2rem; color: #6b7280; transition: 0.3s; border-radius: 0.5rem; }
+.nav-btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 1.2rem; color: #757c89; transition: color .3s ease, background-color .3s ease; border-radius: 0.5rem; }
 @media (min-width: 1024px) { .nav-btn { justify-content: flex-start; padding-left: 1.5rem; } }
-.nav-btn.active, .nav-btn:hover { color: #facc15; background: rgba(255,255,255,0.05); }
+.nav-btn.active, .nav-btn:hover { color: #facc15; background-color: #121212; }
 
 @media (max-width: 1023px) {
-    .sidebar-text { display: none !important; }
+    .sidebar .sidebar-text { display: none; }
     .nav-btn { padding: 0.75rem; }
 }
 
 /* ─── Section Animations ─── */
 .section-fade { animation: fadeInUp 0.6s ease-out; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 /* ─── Hero BG ─── */
 .hero-bg {
@@ -83,10 +84,10 @@ body { font-family: 'Inter', sans-serif; color: white; margin: 0; background-col
     content: ''; position: absolute; top: 0; left: -120%;
     width: 100%; height: 100%;
     background: rgba(255,255,255,0.2);
-    transform: skewX(-25deg); transition: .7s;
+    transform: skewX(-25deg); transition: left .7s ease;
 }
 .hero-btn:hover::before { left: 120%; }
-.social-btn { transition: all .3s ease; }
+.social-btn { transition: transform .3s ease, box-shadow .3s ease, color .3s ease, background-color .3s ease, border-color .3s ease; }
 .social-btn:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(250,204,21,0.12); }
 @media(max-width:1024px) {
     .hero-container { text-align: center; }
@@ -122,12 +123,12 @@ body { font-family: 'Inter', sans-serif; color: white; margin: 0; background-col
     animation: badgeFloat 3s ease-in-out infinite;
 }
 @keyframes badgeFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-.about-tag { transition: all .3s ease; }
+.about-tag { transition: transform .3s ease, box-shadow .3s ease, color .3s ease, background-color .3s ease, border-color .3s ease; }
 .about-tag:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(250,204,21,0.08); border-color: rgba(250,204,21,0.4); }
 .info-card {
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.06);
-    backdrop-filter: blur(10px); transition: all .3s ease;
+    backdrop-filter: blur(10px); transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 .info-card:hover { transform: translateY(-6px); border-color: rgba(250,204,21,0.25); box-shadow: 0 15px 35px rgba(250,204,21,0.08); }
 @media(max-width:1024px) {
@@ -145,13 +146,13 @@ body { font-family: 'Inter', sans-serif; color: white; margin: 0; background-col
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 1.5rem; padding: 2rem;
-    transition: all .35s ease;
+    transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
     overflow: hidden; backdrop-filter: blur(12px);
 }
 .stack-card::before {
     content: ''; position: absolute; inset: 0;
     background: linear-gradient(135deg, rgba(250,204,21,0.08), transparent 50%);
-    opacity: 0; transition: .4s;
+    opacity: 0; transition: opacity .4s ease;
 }
 @media(hover: hover) {
     .stack-card:hover::before { opacity: 1; }
@@ -183,7 +184,7 @@ body { font-family: 'Inter', sans-serif; color: white; margin: 0; background-col
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.06);
     display: flex; align-items: center; justify-content: center;
-    margin-bottom: 1.25rem; transition: .35s; flex-shrink: 0;
+    margin-bottom: 1.25rem; transition: transform .35s ease, border-color .35s ease, background-color .35s ease; flex-shrink: 0;
 }
 .icon-wrap i { font-size: 2rem; line-height: 1; }
 .icon-wrap img { width: 36px; height: 36px; object-fit: contain; }
@@ -195,7 +196,7 @@ body { font-family: 'Inter', sans-serif; color: white; margin: 0; background-col
 .cert-header { opacity: 0; }
 .cert-card {
     opacity: 0; cursor: pointer; position: relative;
-    transition: all .35s ease;
+    transition: transform .35s ease, box-shadow .35s ease;
 }
 .cert-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(250,204,21,0.08); }
 .cert-card::before {
@@ -222,14 +223,14 @@ body { font-family: 'Inter', sans-serif; color: white; margin: 0; background-col
     position: absolute; top: 1rem; right: 1rem;
     width: 2.2rem; height: 2.2rem; border-radius: 999px;
     border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.05);
-    color: white; cursor: pointer; transition: .3s ease; z-index: 5;
+    background-color: #1a1a1a;
+    color: white; cursor: pointer; transition: background-color .3s ease, color .3s ease; z-index: 5;
 }
-.close-btn:hover { background: rgba(250,204,21,0.15); color: #facc15; }
+.close-btn:hover { background-color: #3c3519; color: #facc15; }
 .shine {
     position: absolute; width: 120px; height: 300%;
     background: rgba(255,255,255,0.05);
-    transform: rotate(25deg); top: -120%; left: -200%; transition: 0.8s;
+    transform: rotate(25deg); top: -120%; left: -200%; transition: left .8s ease;
 }
 .cert-card:hover .shine { left: 180%; }
 @media(max-width:1024px) { .modal-content { padding: 1rem; } }
@@ -246,4 +247,35 @@ body { font-family: 'Inter', sans-serif; color: white; margin: 0; background-col
     background: radial-gradient(circle, rgba(250,204,21,0.06) 0%, transparent 70%);
     transform: translate(-50%, -50%);
     transition: left 0.08s ease, top 0.08s ease;
+}
+
+/* ─── Reduced motion ───
+   Users who ask the OS for less motion keep the same layout, colours and
+   hover feedback (colour, border, shadow) but lose sliding, spinning,
+   floating and scaling effects. Keep this block last so it wins at equal
+   specificity. */
+@media (prefers-reduced-motion: reduce) {
+    /* Entrance becomes a plain fade instead of a slide-up */
+    .section-fade { animation-name: fadeIn; }
+
+    /* Continuous decorative loops */
+    .profile-ring,
+    .floating-badge { animation: none; }
+
+    /* Sliding / trailing effects */
+    .sidebar,
+    .cursor-glow,
+    .hero-btn::before,
+    .shine,
+    .cert-image,
+    .image-card img { transition: none; }
+
+    /* Hover lift / zoom */
+    .social-btn:hover,
+    .about-tag:hover,
+    .info-card:hover,
+    .cert-card:hover,
+    .stack-card:hover,
+    .stack-card:hover .icon-wrap,
+    .image-card:hover img { transform: none; }
 }
