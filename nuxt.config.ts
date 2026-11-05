@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   // main.css holds Tailwind's directives followed by your original style.css.
   css: [
     '@fortawesome/fontawesome-free/css/all.min.css',
-    '~/assets/css/main.css'
+    '~/assets/css/style.css'
   ],
 
   // Tailwind v3 (the same major version the old cdn.tailwindcss.com script served)
