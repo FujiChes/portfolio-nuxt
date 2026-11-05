@@ -3,7 +3,7 @@
 import { reactive } from 'vue'
 import { useHead } from '#imports'
 import { useAnimateOnMount } from '~/composables/useAnimateOnMount'
-import { useAsset } from '~/composables/useAsset'
+
 
 useHead({
   title: 'Certificates | Chester Besin'
