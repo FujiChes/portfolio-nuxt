@@ -5,7 +5,6 @@
 
 
 /* Base */
-/* Base */
 html, body {
     overflow-x: hidden;
     width: 100%;
@@ -41,10 +40,13 @@ body { font-family: 'Inter', sans-serif; color: white; background-color: #0a0a0a
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* ─── Hero BG ─── */
+/* ─── Hero BG ───
+   Uses the pre-flipped photo (profile1-flipped.jpg) so he points to the left.
+   The gradient is lighter than before so the photo is actually visible. */
 .hero-bg {
-    background: linear-gradient(to right, #0a0a0a 30%, transparent 100%),
-                url('/Images/profile1.jpg');
+   background:
+        linear-gradient(to right, rgba(10,10,10,0.95) 0%, transparent 75%),
+        url('/Images/profile1-flipped.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -57,7 +59,8 @@ body { font-family: 'Inter', sans-serif; color: white; background-color: #0a0a0a
 /* ─── Home Page ─── */
 .hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(to right, rgba(10,10,10,0.95), rgba(10,10,10,0.75), rgba(10,10,10,0.92));
+    /* lighter than the original (0.95 / 0.75 / 0.92) so the photo shows through */
+   background: linear-gradient(to right, rgba(10,10,10,0.88), rgba(10,10,10,0.66), rgba(10,10,10,0.84));
     z-index: 1;
 }
 .yellow-glow {
