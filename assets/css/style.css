@@ -5,11 +5,15 @@
 
 
 /* Base */
+/* Base */
 html, body {
     overflow-x: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
+}
+@supports (overflow: clip) {
+    html, body { overflow-x: clip; }
 }
 body { font-family: 'Inter', sans-serif; color: white; background-color: #0a0a0a; }
 .font-heading { font-family: 'Space Grotesk', sans-serif; }

@@ -9,9 +9,7 @@ useHead({
 </script>
 
 <template>
-  
-
-  <section class="section-fade min-h-screen flex items-center px-6 lg:px-20 hero-bg w-full pb-20 lg:pb-0">
+  <section class="section-fade relative min-h-screen flex items-center px-6 lg:px-20 hero-bg w-full pb-20 lg:pb-0">
 
     <div class="hero-overlay"></div>
     <div class="yellow-glow"></div>
